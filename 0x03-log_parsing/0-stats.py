@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import sys
 import re
 from collections import defaultdict
@@ -41,13 +42,11 @@ def main():
 
 
 def print_metrics(total_size, status_codes):
-    print(f'Total file size: {total_size}')
+    print(f'File size: {total_size}')
 
     # Print status codes in ascending order
     for code in sorted(status_codes.keys()):
         print(f'{code}: {status_codes[code]}')
-
-    print()  # Add an empty line
 
 
 if __name__ == '__main__':
