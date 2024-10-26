@@ -91,7 +91,7 @@ while True:
         print_metrics()
 
 # End of loop -- print output
-if line_count % 10 != 0:
+if line_count > 0:
     print_metrics()
 else:
     print("File size: 0")
