@@ -94,4 +94,4 @@ while True:
 if line_count % 10 != 0:
     print_metrics()
 else:
-    sprint("File size: 0")
+    print("File size: 0")
