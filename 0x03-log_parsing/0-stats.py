@@ -34,6 +34,8 @@ def print_metrics():
     """
     print(f"File size: {total_size}")
     for status_code, count in status_codes_count.items():
+        if count == 0:
+            continue
         print(f"{status_code}: {count}")
 
 
