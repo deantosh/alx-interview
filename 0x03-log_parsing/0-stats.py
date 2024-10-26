@@ -28,7 +28,7 @@ status_codes_count = {200: 0, 301: 0, 400: 0, 401: 0,
 
 
 # Finds the total file size
-def print_metric():
+def print_metrics():
     """
     Prints the number of lines for each status_code
     """
@@ -40,7 +40,7 @@ def print_metric():
 # Handle keyboard interruption
 def signal_handler(sig, frame):
     """ Handles keyboard interruption signal """
-    print_metric()
+    print_metrics()
     sys.exit(0)
 
 
@@ -49,7 +49,7 @@ signal.signal(signal.SIGINT, signal_handler)
 
 # Define regex pattern to verify input format
 log_pattern = re.compile(
-    r'^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\dt{1,3}) - \['
+    r'^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - \['
     r'(.*?)\] "GET (.*?)" (\d{3}) (\d+)$'
 )
 
@@ -63,7 +63,7 @@ while True:
         break
 
     # strip trailing and leading whitespaces
-    line.strip()
+    line = line.strip()
 
     # Verify format of the read line
     match = log_pattern.match(line)
@@ -86,8 +86,8 @@ while True:
 
     # Print output every time line count is 10
     if line_count % 10 == 0:
-        print_metric()
+        print_metrics()
 
 # End of loop -- print output
 if line_count % 10 != 0:
-    print_metric()
+    print_metrics()
