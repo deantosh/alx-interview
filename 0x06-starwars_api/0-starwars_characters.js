@@ -1,6 +1,5 @@
 #!/usr/bin/node
 
-
 const axios = require('axios');
 
 // Get the movie ID from command-line arguments
@@ -15,7 +14,7 @@ if (!movieId) {
 async function getStarWarsCharacters (movieId) {
   try {
     // Fetch movie data from the Star Wars API
-    const filmResponse = await axios.get(`https://swapi.dev/api/films/${movieId}/`);
+    const filmResponse = await axios.get(`https://swapi-api.alx-tools.com/api/films/${movieId}/`);
     const movieData = filmResponse.data;
 
     // Loop through the character URLs and fetch each character's name
