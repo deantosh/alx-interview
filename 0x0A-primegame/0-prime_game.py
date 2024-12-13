@@ -5,6 +5,12 @@ Module defines a function for prime game.
 
 
 def isWinner(x, nums):
+    """
+    Defines a prime game.
+    Returns:
+         winner (success)
+         None (winner cannot be determined
+    """
     if not nums or x <= 0:
         return None
 
